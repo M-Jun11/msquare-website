@@ -768,7 +768,7 @@
 
         <!-- カード1 -->
         <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(0,169,157,0.25); border-radius:14px; padding:20px 24px; display:flex; align-items:center; gap:18px; transition:border-color 0.2s;">
-          <div style="width:48px;height:48px;border-radius:10px;background:rgba(0,169,157,0.15);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🏠</div>
+          <div style="width:48px;height:48px;border-radius:10px;background:rgba(0,169,157,0.15);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🚐</div>
           <div>
             <div style="font-size:0.88rem;font-weight:600;color:white;margin-bottom:3px;">可動産型 医療支援拠点</div>
             <div style="font-size:0.76rem;color:rgba(255,255,255,0.45);line-height:1.7;">トレーラーハウス型施設を活用し、必要な場所へ医療支援環境を届ける</div>
@@ -1057,39 +1057,67 @@
         </div>
 
         <div class="trailer-visual">
-          <!-- Trailer house SVG -->
-          <svg viewBox="0 0 260 130" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%">
-            <!-- Ground -->
-            <line x1="10" y1="108" x2="250" y2="108" stroke="rgba(0,169,157,0.2)" stroke-width="1"/>
-            <!-- Body -->
-            <rect x="20" y="55" width="200" height="50" rx="6" fill="rgba(0,169,157,0.12)" stroke="rgba(0,169,157,0.3)" stroke-width="1.5"/>
-            <!-- Roof -->
-            <path d="M15 55 L130 30 L245 55" fill="rgba(0,169,157,0.08)" stroke="rgba(0,169,157,0.25)" stroke-width="1.5"/>
-            <!-- Windows -->
-            <rect x="35" y="68" width="30" height="22" rx="3" fill="rgba(59,130,246,0.2)" stroke="rgba(59,130,246,0.4)" stroke-width="1"/>
-            <rect x="75" y="68" width="30" height="22" rx="3" fill="rgba(59,130,246,0.2)" stroke="rgba(59,130,246,0.4)" stroke-width="1"/>
-            <!-- Door -->
-            <rect x="155" y="72" width="22" height="33" rx="3" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-            <!-- ICT antenna -->
-            <line x1="200" y1="30" x2="200" y2="55" stroke="rgba(0,169,157,0.4)" stroke-width="1.5"/>
-            <circle cx="200" cy="27" r="5" fill="none" stroke="rgba(0,169,157,0.5)" stroke-width="1.5"/>
-            <circle cx="200" cy="27" r="10" fill="none" stroke="rgba(0,169,157,0.2)" stroke-width="1">
-              <animate attributeName="r" from="8" to="18" dur="2s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite"/>
+          <!-- トレーラーハウス SVG（リアル版） -->
+          <svg viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%">
+
+            <!-- 地面 -->
+            <line x1="0" y1="128" x2="300" y2="128" stroke="rgba(0,169,157,0.2)" stroke-width="1"/>
+
+            <!-- メインボディ（長方形・フラット屋根） -->
+            <rect x="40" y="52" width="220" height="68" rx="4" fill="rgba(0,169,157,0.10)" stroke="rgba(0,169,157,0.35)" stroke-width="2"/>
+            <!-- 屋根帯 -->
+            <rect x="40" y="52" width="220" height="8" rx="4" fill="rgba(0,169,157,0.2)"/>
+            <line x1="40" y1="60" x2="260" y2="60" stroke="rgba(0,169,157,0.4)" stroke-width="1"/>
+            <!-- サイドストライプ -->
+            <line x1="40" y1="72" x2="260" y2="72" stroke="rgba(0,169,157,0.15)" stroke-width="1" stroke-dasharray="4,2"/>
+
+            <!-- 窓1 -->
+            <rect x="55" y="66" width="36" height="28" rx="2" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.4)" stroke-width="1.5"/>
+            <line x1="73" y1="66" x2="73" y2="94" stroke="rgba(59,130,246,0.3)" stroke-width="1"/>
+            <!-- 窓2 -->
+            <rect x="105" y="66" width="36" height="28" rx="2" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.4)" stroke-width="1.5"/>
+            <line x1="123" y1="66" x2="123" y2="94" stroke="rgba(59,130,246,0.3)" stroke-width="1"/>
+
+            <!-- ドア -->
+            <rect x="160" y="78" width="26" height="42" rx="2" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+            <circle cx="183" cy="102" r="2" fill="rgba(255,255,255,0.4)"/>
+            <rect x="160" y="118" width="26" height="4" rx="1" fill="rgba(0,169,157,0.2)" stroke="rgba(0,169,157,0.3)" stroke-width="1"/>
+
+            <!-- ICTアンテナ -->
+            <line x1="245" y1="28" x2="245" y2="52" stroke="rgba(0,169,157,0.5)" stroke-width="2"/>
+            <line x1="234" y1="36" x2="256" y2="36" stroke="rgba(0,169,157,0.4)" stroke-width="1.5"/>
+            <line x1="239" y1="30" x2="251" y2="30" stroke="rgba(0,169,157,0.3)" stroke-width="1"/>
+            <circle cx="245" cy="28" r="6" fill="none" stroke="rgba(0,196,182,0.5)" stroke-width="1">
+              <animate attributeName="r" from="6" to="18" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" from="0.6" to="0" dur="2s" repeatCount="indefinite"/>
             </circle>
-            <!-- Signal waves -->
-            <path d="M188,20 Q200,15 212,20" stroke="rgba(0,169,157,0.4)" stroke-width="1" fill="none"/>
-            <path d="M183,14 Q200,7 217,14" stroke="rgba(0,169,157,0.25)" stroke-width="1" fill="none"/>
-            <!-- Wheels -->
-            <circle cx="75" cy="108" r="10" fill="rgba(255,255,255,0.06)" stroke="rgba(0,169,157,0.3)" stroke-width="1.5"/>
-            <circle cx="75" cy="108" r="4" fill="rgba(0,169,157,0.2)"/>
-            <circle cx="175" cy="108" r="10" fill="rgba(255,255,255,0.06)" stroke="rgba(0,169,157,0.3)" stroke-width="1.5"/>
-            <circle cx="175" cy="108" r="4" fill="rgba(0,169,157,0.2)"/>
-            <!-- Hitch -->
-            <line x1="20" y1="95" x2="5" y2="100" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
-            <!-- M SQUARE text on body -->
-            <text x="130" y="86" text-anchor="middle" fill="rgba(0,196,182,0.6)" font-size="10" font-family="Instrument Sans" font-weight="600" letter-spacing="1">M SQUARE</text>
-            <text x="130" y="98" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-size="7" font-family="Noto Sans JP">医療支援拠点</text>
+
+            <!-- ソーラーパネル -->
+            <rect x="80" y="46" width="50" height="9" rx="1" fill="rgba(59,130,246,0.2)" stroke="rgba(59,130,246,0.35)" stroke-width="1"/>
+            <line x1="96" y1="46" x2="96" y2="55" stroke="rgba(59,130,246,0.2)" stroke-width="0.5"/>
+            <line x1="112" y1="46" x2="112" y2="55" stroke="rgba(59,130,246,0.2)" stroke-width="0.5"/>
+
+            <!-- シャーシ -->
+            <rect x="40" y="120" width="220" height="6" rx="1" fill="rgba(0,169,157,0.2)" stroke="rgba(0,169,157,0.3)" stroke-width="1"/>
+
+            <!-- 車輪（タンデム4輪） -->
+            <circle cx="100" cy="128" r="12" fill="rgba(20,20,30,0.6)" stroke="rgba(0,169,157,0.4)" stroke-width="2"/>
+            <circle cx="100" cy="128" r="5" fill="rgba(0,169,157,0.15)" stroke="rgba(0,169,157,0.3)" stroke-width="1"/>
+            <circle cx="126" cy="128" r="12" fill="rgba(20,20,30,0.6)" stroke="rgba(0,169,157,0.4)" stroke-width="2"/>
+            <circle cx="126" cy="128" r="5" fill="rgba(0,169,157,0.15)" stroke="rgba(0,169,157,0.3)" stroke-width="1"/>
+            <circle cx="184" cy="128" r="12" fill="rgba(20,20,30,0.6)" stroke="rgba(0,169,157,0.4)" stroke-width="2"/>
+            <circle cx="184" cy="128" r="5" fill="rgba(0,169,157,0.15)" stroke="rgba(0,169,157,0.3)" stroke-width="1"/>
+            <circle cx="210" cy="128" r="12" fill="rgba(20,20,30,0.6)" stroke="rgba(0,169,157,0.4)" stroke-width="2"/>
+            <circle cx="210" cy="128" r="5" fill="rgba(0,169,157,0.15)" stroke="rgba(0,169,157,0.3)" stroke-width="1"/>
+
+            <!-- ヒッチ（牽引部） -->
+            <path d="M40 123 L18 118 L10 118 L10 122 L18 122 L40 126 Z" fill="rgba(0,169,157,0.15)" stroke="rgba(0,169,157,0.3)" stroke-width="1"/>
+            <circle cx="8" cy="120" r="4" fill="rgba(0,169,157,0.3)" stroke="rgba(0,169,157,0.5)" stroke-width="1.5"/>
+
+            <!-- ロゴ・テキスト -->
+            <text x="148" y="92" text-anchor="middle" fill="rgba(0,196,182,0.7)" font-size="9" font-family="Instrument Sans, sans-serif" font-weight="700" letter-spacing="1.5">M SQUARE</text>
+            <text x="148" y="104" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="6.5" font-family="Noto Sans JP, sans-serif">可動産医療支援拠点</text>
+
           </svg>
           <div class="trailer-label">トレーラーハウス型 可動産拠点（概念図）</div>
         </div>
@@ -1332,7 +1360,7 @@
           -->
           <form
             id="contact-form"
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            action="https://formspree.io/f/myknaoav"
             method="POST"
             style="display:flex;flex-direction:column;gap:12px;"
             onsubmit="handleSubmit(event)"
@@ -1395,7 +1423,7 @@
           <div id="form-error" style="display:none; margin-top:8px; padding:12px 16px; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); border-radius:8px;">
             <div style="font-size:0.82rem; color:#FCA5A5;">
               ⚠️ 送信に失敗しました。時間をおいて再度お試しいただくか、直接メールにてご連絡ください：<br>
-              <a href="mailto:info@msquare-inc.co.jp" style="color:var(--teal-light);">info@msquare-inc.co.jp</a>
+              <a href="/cdn-cgi/l/email-protection#a9c0c7cfc6e9c4dad8dcc8dbcc84c0c7ca87cac687c3d9" style="color:var(--teal-light);"><span class="__cf_email__" data-cfemail="9ff6f1f9f0dff2eceeeafeedfab2f6f1fcb1fcf0b1f5ef">[email&#160;protected]</span></a>
             </div>
           </div>
 
@@ -1420,7 +1448,7 @@
   <p class="footer-copy">© 2024 M Square Co., Ltd. All rights reserved.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // NAV scroll effect
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
@@ -1484,17 +1512,4 @@ async function handleSubmit(e) {
       // 成功
       form.style.display = 'none';
       successEl.style.display = 'block';
-    } else {
-      throw new Error('Server error');
-    }
-  } catch (err) {
-    // エラー
-    btn.textContent = '送信する →';
-    btn.disabled = false;
-    btn.style.opacity = '1';
-    errorEl.style.display = 'block';
-  }
-}
-</script>
-</body>
-</html>
+    } els
