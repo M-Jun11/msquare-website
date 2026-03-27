@@ -1397,28 +1397,28 @@
         </p>
 
         <div class="contact-btns">
-          <a href="/cdn-cgi/l/email-protection#b1d8dfd7def1dcc2c0c4d0c3d49fd2de9fdbc1" class="contact-btn">
+          <a href="#contact" class="contact-btn" onclick="scrollToForm(event)">
             <div>
               <div class="contact-btn-label">連携相談</div>
               <div class="contact-btn-sub">大学・自治体・医療機関・薬局との連携</div>
             </div>
             <div class="contact-btn-arrow">→</div>
           </a>
-          <a href="/cdn-cgi/l/email-protection#a8c1c6cec7e8c5dbd9ddc9dacd86cbc786c2d8" class="contact-btn">
+          <a href="#contact" class="contact-btn" onclick="scrollToForm(event)">
             <div>
               <div class="contact-btn-label">導入相談</div>
               <div class="contact-btn-sub">インフラ・ICT導入に関するご相談</div>
             </div>
             <div class="contact-btn-arrow">→</div>
           </a>
-                    <a href="/cdn-cgi/l/email-protection#a8c1c6cec7e8c5dbd9ddc9dacd86cbc786c2d8" class="contact-btn" style="border-color:rgba(0,169,157,0.3); background:rgba(0,169,157,0.04);">
+                    <a href="#contact" class="contact-btn" onclick="scrollToForm(event)" style="border-color:rgba(0,169,157,0.3); background:rgba(0,169,157,0.04);">
             <div>
               <div class="contact-btn-label" style="color:var(--teal);">🎓 インターン応募</div>
               <div class="contact-btn-sub">週1回〜・遠隔参加はオンライン可。医療撤退ゼロに挑戦</div>
             </div>
             <div class="contact-btn-arrow">→</div>
           </a>
-<a href="/cdn-cgi/l/email-protection#5831363e3718352b292d392a3d763b37763228" class="contact-btn">
+<a href="#contact" class="contact-btn" onclick="scrollToForm(event)">
             <div>
               <div class="contact-btn-label">取材 / 協業相談</div>
               <div class="contact-btn-sub">メディア取材・投資家・パートナーの方</div>
@@ -1533,6 +1533,21 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+  // Contact button scroll to form
+  function scrollToForm(e) {
+    e.preventDefault();
+    var form = document.getElementById('contact');
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth' });
+      // Focus first input after scroll
+      setTimeout(function() {
+        var input = form.querySelector('input');
+        if (input) input.focus();
+      }, 600);
+    }
+  }
+
   // Hamburger menu
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
