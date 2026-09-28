@@ -1,0 +1,6 @@
+# プレビュー（*.pages.dev）は検索エンジンに載せない。本番（www.msquare-inc.co.jp）には付かない
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
