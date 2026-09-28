@@ -1521,7 +1521,6 @@
             <!-- 隠しフィールド（スパム対策） -->
             <input type="text" name="_gotcha" style="display:none;">
             <!-- 送信先メール -->
-            <input type="hidden" name="_replyto" value="info@msquare-inc.co.jp">
             <input type="hidden" name="_subject" value="【エムスクエア】お問い合わせがありました">
 
             <button type="submit" class="contact-submit" id="submit-btn">
@@ -1857,4 +1856,17 @@ async function handleSubmit(e) {
       // 成功
       form.style.display = 'none';
       successEl.style.display = 'block';
-    } els
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    // エラー
+    btn.textContent = '送信する →';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    errorEl.style.display = 'block';
+  }
+}
+</script>
+</body>
+</html>
