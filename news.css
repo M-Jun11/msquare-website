@@ -1,0 +1,34 @@
+/* ニュース（トップの欄と /news/ の一覧で共通） */
+.news { background: var(--white); padding-top: 80px; padding-bottom: 80px; }
+.news-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+.news-head .section-title { margin-bottom: 0; }
+.news-more {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.9rem; font-weight: 500; color: var(--teal); text-decoration: none;
+  padding: 10px 20px; border: 1px solid var(--teal); border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+.news-more:hover { background: var(--teal); color: var(--white); }
+.news-list { list-style: none; margin-top: 24px; border-top: 1px solid var(--gray-300); }
+.news-item {
+  display: grid; grid-template-columns: 150px 1fr; gap: 8px 32px;
+  padding: 22px 4px; border-bottom: 1px solid var(--gray-300);
+}
+.news-date {
+  font-family: 'Instrument Sans', 'Noto Sans JP', sans-serif;
+  font-size: 0.9rem; font-weight: 500; color: var(--teal); padding-top: 2px;
+}
+.news-text { font-size: 0.96rem; line-height: 1.9; color: var(--gray-700); white-space: pre-line; overflow-wrap: anywhere; }
+.news-link {
+  display: inline-block; margin-top: 6px;
+  font-size: 0.86rem; color: var(--sky); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere;
+}
+.news-link:hover { color: var(--navy-mid); }
+.news-empty, .news-loading { padding: 22px 4px; color: var(--gray-500); font-size: 0.9rem; }
+.news-page { padding-top: 140px; min-height: 70vh; }
+.news-page .news-back { display: inline-block; margin-top: 40px; color: var(--teal); text-decoration: none; font-weight: 500; }
+@media (max-width: 768px) {
+  .news { padding-top: 64px; padding-bottom: 64px; }
+  .news-item { grid-template-columns: 1fr; gap: 4px; padding: 18px 2px; }
+  .news-page { padding-top: 112px; }
+}
