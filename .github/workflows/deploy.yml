@@ -25,10 +25,11 @@ jobs:
       - name: Collect site files
         run: |
           mkdir _site
-          for f in index.html 404.html _headers _redirects robots.txt sitemap.xml favicon.ico favicon.png; do
+          for f in index.html 404.html _headers _redirects robots.txt sitemap.xml favicon.ico favicon.png news.json news.js news.css; do
             if [ -f "$f" ]; then cp "$f" _site/; fi
           done
           if [ -d images ]; then cp -r images _site/; fi
+          if [ -d news ]; then cp -r news _site/; fi
           test -f _site/index.html
           ls -R _site
 
