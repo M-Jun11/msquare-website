@@ -30,8 +30,8 @@
       if (u.host !== location.host) {
         a.target = '_blank';
         a.rel = 'noopener';
-        a.textContent = u.host + ' ↗';
-        a.setAttribute('aria-label', u.host + '（新しいタブで開きます）');
+        a.textContent = u.host.replace(/^www./, '') + ' ↗';
+        a.setAttribute('aria-label', u.host.replace(/^www./, '') + '（新しいタブで開きます）');
       } else {
         a.textContent = '詳しく見る →';
       }
