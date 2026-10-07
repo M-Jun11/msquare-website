@@ -715,6 +715,15 @@
   .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--teal-light); }
 
+  /* ── NAV（項目が増えたので、狭い PC 幅ではメニューをハンバーガーに） ── */
+  .nav-links a { white-space: nowrap; }
+  @media (max-width: 1100px) { .nav-links { gap: 20px; } }
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .desktop-only { display: none !important; }
+    .hamburger { display: flex; }
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 12px 16px; }
@@ -798,6 +807,7 @@
     <li><a href="/#what">私たちの役割</a></li>
     <li><a href="/#solution">ソリューション</a></li>
     <li><a href="/#vision">ビジョン</a></li>
+    <li><a href="/news/">ニュース</a></li>
     <li><a href="/#about">会社概要</a></li>
     <li><a href="/#recruit">採用情報</a></li>
     <li><a href="/#intern">インターン</a></li>
@@ -816,6 +826,7 @@
     <li><a href="/#what" onclick="closeMobileMenu()">私たちの役割</a></li>
     <li><a href="/#solution" onclick="closeMobileMenu()">ソリューション</a></li>
     <li><a href="/#vision" onclick="closeMobileMenu()">ビジョン</a></li>
+    <li><a href="/news/" onclick="closeMobileMenu()">ニュース</a></li>
     <li><a href="/#about" onclick="closeMobileMenu()">会社概要</a></li>
     <li><a href="/#recruit" onclick="closeMobileMenu()">採用情報</a></li>
     <li><a href="/#intern" onclick="closeMobileMenu()">インターン</a></li>
