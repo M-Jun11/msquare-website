@@ -703,6 +703,8 @@
     font-family: 'Noto Sans JP', sans-serif;
   }
   .contact-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+  .contact-privacy { font-size: 0.78rem; line-height: 1.7; color: rgba(255,255,255,0.55); }
+  .contact-privacy a { color: var(--teal-light); text-underline-offset: 3px; }
 
   /* ── FOOTER ── */
   footer {
@@ -1549,6 +1551,7 @@
             <!-- 送信先メール -->
             <input type="hidden" name="_subject" value="【エムスクエア】お問い合わせがありました">
 
+            <p class="contact-privacy"><a href="/privacy/">プライバシーポリシー</a>に同意のうえ送信してください。</p>
             <button type="submit" class="contact-submit" id="submit-btn">
               送信する →
             </button>
@@ -1757,6 +1760,7 @@
     <a href="#about">会社概要</a>
     <a href="/news/">ニュース</a>
     <a href="#contact">お問い合わせ</a>
+    <a href="/privacy/">プライバシーポリシー</a>
   </div>
   <p class="footer-copy">© 2024 M Square Co., Ltd. All rights reserved.</p>
 </footer>

@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー｜エムスクエア株式会社</title>
+<meta name="description" content="エムスクエア株式会社のプライバシーポリシー（個人情報の取り扱い）。">
+<link rel="canonical" href="https://www.msquare-inc.co.jp/privacy/">
+<meta property="og:title" content="プライバシーポリシー｜エムスクエア株式会社">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.msquare-inc.co.jp/privacy/">
+<link rel="icon" type="image/png" href="/favicon.png" sizes="64x64">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1F3C;
+    --navy-mid: #1a3460;
+    --teal: #00A99D;
+    --teal-light: #00C4B6;
+    --teal-pale: #E8F8F7;
+    --sky: #3B82F6;
+    --white: #FFFFFF;
+    --off-white: #F7F9FC;
+    --gray-100: #F1F4F8;
+    --gray-300: #CBD5E1;
+    --gray-500: #64748B;
+    --gray-700: #334155;
+    --text: #0D1F3C;
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HAMBURGER MENU ── */
+  .hamburger {
+    display: none;
+    flex-direction: column; justify-content: center; align-items: center;
+    gap: 5px; width: 40px; height: 40px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+    border-radius: 8px; transition: background 0.2s;
+  }
+  .hamburger:hover { background: var(--gray-100); }
+  .hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--navy); border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(16px);
+    z-index: 99;
+    flex-direction: column; justify-content: center; align-items: center;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .mobile-menu.open {
+    display: flex; opacity: 1;
+  }
+  .mobile-menu ul {
+    list-style: none; display: flex; flex-direction: column;
+    align-items: center; gap: 8px; width: 100%; padding: 0 32px;
+  }
+  .mobile-menu ul li { width: 100%; }
+  .mobile-menu ul a {
+    display: block; padding: 16px 24px; border-radius: 12px;
+    font-size: 1.1rem; font-weight: 500; color: var(--navy);
+    text-decoration: none; text-align: center;
+    transition: background 0.2s;
+  }
+  .mobile-menu ul a:hover { background: var(--gray-100); }
+  .mobile-menu .mobile-cta {
+    background: var(--navy) !important; color: white !important;
+    margin-top: 8px;
+  }
+  .mobile-menu .mobile-cta:hover { background: var(--navy-mid) !important; }
+
+  .desktop-only { display: flex; }
+
+  /* ── NAV ── (再掲確認用) */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 48px;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(13,31,60,0.08);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 20px rgba(13,31,60,0.10); }
+
+  .nav-logo {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 600; font-size: 1.15rem; letter-spacing: 0.04em;
+    color: var(--navy); text-decoration: none;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .nav-logo-svg { height: 32px; width: auto; display: block; }
+  .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .nav-logo-ja { font-size: 0.78rem; font-weight: 600; color: var(--navy); letter-spacing: 0.04em; font-family: 'Noto Sans JP', sans-serif; }
+  .nav-logo-en { font-size: 0.6rem; font-weight: 400; color: var(--gray-500); letter-spacing: 0.08em; font-family: 'Instrument Sans', sans-serif; }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+    color: var(--gray-700); text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  .nav-cta {
+    padding: 9px 22px; border-radius: 8px;
+    background: var(--navy); color: white;
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em;
+    text-decoration: none; transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: var(--navy-mid); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    background: var(--navy);
+    padding: 120px 48px 80px;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+
+  /* Grid mesh */
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,169,157,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,169,157,0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Glowing orbs */
+  .hero-orb {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); opacity: 0.25;
+  }
+  .hero-orb-1 {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, var(--teal), transparent 70%);
+    top: -100px; right: -100px;
+    animation: float1 8s ease-in-out infinite;
+  }
+  .hero-orb-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, var(--sky), transparent 70%);
+    bottom: -80px; left: 10%;
+    animation: float2 10s ease-in-out infinite;
+  }
+  .hero-orb-3 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0,196,182,0.6), transparent 70%);
+    top: 40%; left: 40%;
+    animation: float1 12s ease-in-out infinite reverse;
+  }
+
+  @keyframes float1 {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.05); }
+  }
+  @keyframes float2 {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(20px) scale(0.95); }
+  }
+
+  /* Network dots */
+  .hero-network { position: absolute; inset: 0; opacity: 0.15; }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+
+  .hero-label {
+    display: inline-block; margin-bottom: 20px;
+    padding: 5px 14px; border-radius: 100px;
+    border: 1px solid rgba(0,169,157,0.4);
+    background: rgba(0,169,157,0.1);
+    color: var(--teal-light); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .hero-h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    line-height: 1.18; color: white;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero-h1 em { color: var(--teal-light); font-style: normal; }
+
+  .hero-sub {
+    font-size: 1.05rem; line-height: 1.9;
+    color: rgba(255,255,255,0.65); margin-bottom: 40px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-sub strong { color: rgba(255,255,255,0.9); font-weight: 500; }
+
+  .hero-desc {
+    font-size: 0.88rem; line-height: 2; color: rgba(255,255,255,0.5);
+    margin-bottom: 44px;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hero-btns {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .btn-primary {
+    padding: 14px 28px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    color: white; font-size: 0.88rem; font-weight: 500;
+    letter-spacing: 0.04em; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(0,169,157,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,169,157,0.4); }
+
+  .btn-outline {
+    padding: 14px 28px; border-radius: 9px;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500;
+    letter-spacing: 0.04em; text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--teal); background: rgba(0,169,157,0.08); }
+
+  /* Hero visual side */
+  .hero-visual {
+    animation: fadeIn 1s 0.5s ease both;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+
+  .network-diagram {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(0,169,157,0.2);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative; overflow: hidden;
+  }
+  .network-diagram::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,169,157,0.05), rgba(59,130,246,0.05));
+  }
+
+  .network-svg { width: 100%; height: auto; }
+
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  }
+  .hero-stat {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 16px;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .hero-stat:hover { border-color: rgba(0,169,157,0.3); background: rgba(0,169,157,0.06); }
+  .hero-stat-num {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 1.4rem; font-weight: 600; color: var(--teal-light); display: block;
+  }
+  .hero-stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; margin-top: 2px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 96px 48px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 14px;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--teal);
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 24px; height: 2px; background: var(--teal); border-radius: 2px;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--navy); line-height: 1.3; margin-bottom: 20px;
+  }
+
+  .section-body {
+    font-size: 0.96rem; line-height: 2;
+    color: var(--gray-700); max-width: 620px;
+  }
+
+  /* Reveal animation */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ── WHAT WE DO ── */
+  .what-we-do { background: var(--off-white); }
+
+  .what-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    margin-top: 60px;
+  }
+
+  .connector-diagram {
+    background: white; border-radius: var(--radius-lg);
+    padding: 40px; box-shadow: 0 4px 40px rgba(13,31,60,0.06);
+    position: relative;
+  }
+
+  .conn-title {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gray-500);
+    text-align: center; margin-bottom: 32px;
+  }
+
+  .conn-grid {
+    display: grid; grid-template-areas:
+      "hosp . ms . ict"
+      ". . . . ."
+      "pharm . ms2 . area";
+    grid-template-columns: 1fr 24px 1fr 24px 1fr;
+    grid-template-rows: 1fr 20px 1fr;
+    gap: 0; align-items: center; justify-items: center;
+  }
+
+  .conn-node {
+    padding: 12px 16px; border-radius: 10px; text-align: center;
+    min-width: 90px; position: relative; z-index: 2;
+  }
+  .conn-node-icon { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+  .conn-node-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.04em; }
+
+  .conn-hosp { background: #EFF6FF; color: #1D4ED8; grid-area: hosp; }
+  .conn-pharm { background: #F0FDF4; color: #166534; grid-area: pharm; }
+  .conn-ict { background: #FFF7ED; color: #C2410C; grid-area: ict; }
+  .conn-area { background: #FDF4FF; color: #7E22CE; grid-area: area; }
+
+  .conn-center {
+    grid-area: ms;
+    grid-row: 1 / span 3;
+    background: var(--navy);
+    color: white; padding: 20px 16px; border-radius: 14px;
+    box-shadow: 0 0 0 6px rgba(0,169,157,0.2), 0 8px 32px rgba(13,31,60,0.2);
+    z-index: 3;
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+  }
+  .conn-center-icon { font-size: 1.6rem; }
+  .conn-center-name {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
+    color: var(--teal-light);
+  }
+  .conn-center-sub { font-size: 0.6rem; color: rgba(255,255,255,0.5); }
+
+  /* Lines drawn via pseudo-elements on a wrapper */
+  .conn-lines { position: absolute; inset: 40px; pointer-events: none; }
+
+  .what-text { }
+  .what-text p {
+    font-size: 0.96rem; line-height: 2; color: var(--gray-700); margin-bottom: 16px;
+  }
+  .what-text strong { color: var(--navy); font-weight: 600; }
+
+  .role-tags {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px;
+  }
+  .role-tag {
+    padding: 6px 14px; border-radius: 6px;
+    background: var(--teal-pale); color: var(--teal); font-size: 0.78rem; font-weight: 500;
+  }
+
+  /* ── ISSUE ── */
+  .issue { background: var(--navy); }
+
+  .issue .section-label { color: rgba(0,196,182,0.8); }
+  .issue .section-label::before { background: rgba(0,196,182,0.8); }
+  .issue .section-title { color: white; }
+
+  .issue-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    margin-top: 60px;
+  }
+
+  .issue-body {
+    font-size: 0.96rem; line-height: 2; color: rgba(255,255,255,0.65); margin-bottom: 40px;
+  }
+
+  .issue-factors {
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .issue-factor {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px 20px; border-radius: 10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    transition: border-color 0.2s;
+  }
+  .issue-factor:hover { border-color: rgba(0,169,157,0.3); }
+  .issue-factor-icon {
+    width: 40px; height: 40px; border-radius: 8px; flex-shrink: 0;
+    background: rgba(0,169,157,0.15); display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .issue-factor-text { font-size: 0.88rem; color: rgba(255,255,255,0.8); font-weight: 500; }
+
+  /* Issue visual – map-like */
+  .issue-visual {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,169,157,0.15);
+    border-radius: 20px; padding: 36px;
+    position: relative; overflow: hidden;
+  }
+  .issue-visual::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(0,169,157,0.08), transparent 60%);
+  }
+
+  /* ── SOLUTION ── */
+  .solution { background: white; }
+
+  .solution-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+    margin-top: 60px;
+  }
+
+  .solution-features {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .sol-item {
+    display: flex; gap: 16px; padding: 20px;
+    border-radius: 12px; border: 1px solid var(--gray-100);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .sol-item:hover {
+    border-color: var(--teal); transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(0,169,157,0.08);
+  }
+  .sol-icon {
+    width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+    background: var(--teal-pale);
+    display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+  }
+  .sol-item-title { font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .sol-item-desc { font-size: 0.8rem; color: var(--gray-500); line-height: 1.7; }
+
+  .solution-visual {
+    position: sticky; top: 100px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    border-radius: 20px; padding: 40px;
+    color: white; box-shadow: 0 12px 60px rgba(13,31,60,0.15);
+  }
+
+  .sol-vis-label {
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--teal-light); margin-bottom: 24px; font-weight: 500;
+  }
+  .sol-vis-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem; color: white; margin-bottom: 16px; line-height: 1.3;
+  }
+  .sol-vis-body {
+    font-size: 0.84rem; color: rgba(255,255,255,0.55); line-height: 1.9; margin-bottom: 28px;
+  }
+
+  .trailer-visual {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(0,169,157,0.2);
+    border-radius: 12px; padding: 24px;
+    text-align: center;
+  }
+  .trailer-icon { font-size: 3rem; margin-bottom: 12px; display: block; }
+  .trailer-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; }
+
+  .sol-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 20px; padding: 8px 14px; border-radius: 8px;
+    background: rgba(0,169,157,0.15); border: 1px solid rgba(0,169,157,0.25);
+    font-size: 0.75rem; color: var(--teal-light);
+  }
+
+  /* ── FEATURES ── */
+  .features { background: var(--gray-100); }
+
+  .features-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+    margin-top: 60px;
+  }
+  @media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .feature-card {
+    background: white; border-radius: var(--radius-lg); padding: 28px 20px;
+    text-align: center; border: 1px solid transparent;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .feature-card:hover {
+    border-color: var(--teal); transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,169,157,0.1);
+  }
+  .feature-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+  .feature-title {
+    font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 8px;
+  }
+  .feature-desc { font-size: 0.76rem; color: var(--gray-500); line-height: 1.8; }
+
+  /* ── USE CASES ── */
+  .use-cases { background: white; }
+
+  .cases-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+    margin-top: 60px;
+  }
+  .case-card {
+    padding: 32px; border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-100); position: relative; overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .case-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .case-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--sky));
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .case-card:hover::before { opacity: 1; }
+
+  .case-icon { font-size: 1.6rem; margin-bottom: 14px; display: block; }
+  .case-title { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+  .case-desc { font-size: 0.82rem; color: var(--gray-500); line-height: 1.8; }
+
+  /* ── VISION ── */
+  .vision {
+    background: linear-gradient(135deg, #071428, #0D1F3C 40%, #0d2d3a);
+    position: relative; overflow: hidden;
+  }
+  .vision::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,169,157,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,169,157,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .vision-content { position: relative; z-index: 1; text-align: center; max-width: 800px; margin: 0 auto; }
+
+  .vision .section-label { color: rgba(0,196,182,0.7); }
+  .vision .section-label::before { background: rgba(0,196,182,0.7); }
+
+  .vision .section-title {
+    font-size: clamp(2rem, 4vw, 3.2rem); color: white; margin-bottom: 32px;
+    text-align: center;
+  }
+  .vision-body {
+    font-size: 1rem; line-height: 2.2; color: rgba(255,255,255,0.6); margin-bottom: 40px;
+  }
+  .vision-body strong { color: rgba(255,255,255,0.9); font-weight: 500; }
+
+  .vision-banner {
+    display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;
+    padding: 20px 36px; border-radius: 100px;
+    border: 1px solid rgba(0,169,157,0.35);
+    background: rgba(0,169,157,0.08);
+    font-size: 1rem; color: var(--teal-light); font-weight: 500;
+  }
+  .vision-arrow { color: rgba(0,196,182,0.6); }
+
+  /* ── ABOUT ── */
+  .about { background: var(--off-white); }
+
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+    margin-top: 60px;
+  }
+
+  .about-table { width: 100%; border-collapse: collapse; }
+  .about-table tr { border-bottom: 1px solid var(--gray-100); }
+  .about-table td {
+    padding: 16px 0; font-size: 0.88rem; vertical-align: top;
+    line-height: 2;
+  }
+  .about-table td:first-child {
+    width: 100px; font-weight: 500; color: var(--gray-500);
+    font-size: 0.78rem; letter-spacing: 0.04em; padding-right: 16px;
+    white-space: nowrap;
+  }
+  .about-table td:last-child { color: var(--gray-700); }
+
+  .about-note {
+    font-size: 0.76rem; color: var(--gray-500); margin-top: 12px;
+    line-height: 1.8; border-left: 2px solid var(--teal); padding-left: 12px;
+  }
+
+  .about-highlight {
+    background: var(--navy); border-radius: 20px; padding: 40px; color: white;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .about-hl-title {
+    font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: white; margin-bottom: 8px;
+  }
+  .about-hl-body { font-size: 0.84rem; color: rgba(255,255,255,0.55); line-height: 1.9; }
+
+  .about-hl-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .about-hl-list li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 0.84rem; color: rgba(255,255,255,0.75); line-height: 1.7;
+  }
+  .about-hl-list li::before {
+    content: ''; display: block; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--teal); flex-shrink: 0; margin-top: 8px;
+  }
+
+  /* ── CONTACT ── */
+  .contact { background: white; }
+
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 60px; }
+
+  .contact-intro { font-size: 0.96rem; line-height: 2; color: var(--gray-700); margin-bottom: 32px; }
+
+  .contact-btns { display: flex; flex-direction: column; gap: 12px; }
+  .contact-btn {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px; border-radius: 12px;
+    border: 1px solid var(--gray-100); text-decoration: none;
+    color: var(--navy); transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    background: white;
+  }
+  .contact-btn:hover {
+    border-color: var(--teal); transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(0,169,157,0.08);
+  }
+  .contact-btn-label { font-size: 0.96rem; font-weight: 600; }
+  .contact-btn-sub { font-size: 0.75rem; color: var(--gray-500); margin-top: 2px; }
+  .contact-btn-arrow {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: var(--teal-pale); display: flex; align-items: center; justify-content: center;
+    color: var(--teal); font-size: 1rem; transition: background 0.2s;
+  }
+  .contact-btn:hover .contact-btn-arrow { background: var(--teal); color: white; }
+
+  .contact-card {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    border-radius: 20px; padding: 40px; color: white;
+  }
+  .contact-card-title { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin-bottom: 12px; }
+  .contact-card-body { font-size: 0.84rem; color: rgba(255,255,255,0.55); line-height: 1.9; margin-bottom: 28px; }
+  .contact-card-form { display: flex; flex-direction: column; gap: 12px; }
+  .contact-input {
+    width: 100%; padding: 12px 16px; border-radius: 8px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    color: white; font-size: 0.85rem; outline: none;
+    transition: border-color 0.2s;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .contact-input::placeholder { color: rgba(255,255,255,0.3); }
+  .contact-input:focus { border-color: var(--teal); }
+  textarea.contact-input { resize: vertical; min-height: 100px; }
+  .contact-submit {
+    padding: 13px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    color: white; font-size: 0.88rem; font-weight: 500;
+    border: none; cursor: pointer; transition: opacity 0.2s, transform 0.2s;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .contact-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy); padding: 48px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+  }
+  .footer-logo {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 600; color: white; font-size: 0.95rem; letter-spacing: 0.04em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .footer-copy { font-size: 0.76rem; color: rgba(255,255,255,0.3); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal-light); }
+
+  /* ── NAV（項目が増えたので、狭い PC 幅ではメニューをハンバーガーに） ── */
+  .nav-links a { white-space: nowrap; }
+  @media (max-width: 1100px) { .nav-links { gap: 20px; } }
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .desktop-only { display: none !important; }
+    .hamburger { display: flex; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 12px 16px; }
+    .nav-links { display: none; }
+    .desktop-only { display: none !important; }
+    .hamburger { display: flex; }
+    .nav-logo img { height: 44px !important; }
+    .nav-logo { gap: 0 !important; }
+    section { padding: 72px 20px; }
+    .hero { padding: 130px 16px 60px; }
+    .hero-content { grid-template-columns: 1fr; gap: 28px; }
+    .hero-visual { order: -1; }
+    .hero-visual > div { margin-bottom: 10px; }
+    .hero-visual > div[style*="flex-direction:column"] > div {
+      padding: 14px 16px !important;
+    }
+    .hero-stats { grid-template-columns: repeat(3, 1fr); }
+    .what-grid, .issue-layout, .solution-grid, .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .cases-grid { grid-template-columns: 1fr; }
+
+    .recruit .container > div:last-child > div { grid-template-columns: 1fr !important; }
+    #intern .container > div:last-child > div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+    #intern img { height: 200px !important; }
+    .recruit img { height: 200px !important; }
+    .recruit table td:first-child { width: 70px !important; }
+    footer { flex-direction: column; align-items: flex-start; padding: 36px 20px; }
+    .footer-links { flex-wrap: wrap; gap: 16px; }
+  }
+
+  /* Pulse animation for network dots */
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.3); }
+  }
+
+  .pulse-dot {
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .pulse-dot:nth-child(2) { animation-delay: 0.4s; }
+  .pulse-dot:nth-child(3) { animation-delay: 0.8s; }
+  .pulse-dot:nth-child(4) { animation-delay: 1.2s; }
+  .pulse-dot:nth-child(5) { animation-delay: 1.6s; }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.3); font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: bob 2s ease-in-out infinite;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+  .scroll-arrow { font-size: 1rem; }
+
+  /* Number badge */
+  .num-badge {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em;
+    color: var(--teal); background: var(--teal-pale);
+    padding: 2px 8px; border-radius: 4px; margin-right: 8px;
+  }
+
+  /* ── PRIVACY ── */
+  .pp-page { padding: 140px 48px 96px; min-height: 70vh; background: var(--white); }
+  .pp-page .container { max-width: 860px; }
+  .pp-intro { margin-top: 8px; font-size: 0.98rem; line-height: 2; color: var(--gray-700); }
+  .pp-toc { margin: 32px 0 8px; padding: 20px 24px; background: var(--off-white); border-radius: var(--radius); }
+  .pp-toc ol { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; }
+  .pp-toc a { font-size: 0.88rem; color: var(--navy-mid); text-decoration: none; }
+  .pp-toc a:hover { color: var(--teal); text-decoration: underline; }
+  .pp-sec { padding-top: 40px; scroll-margin-top: 96px; }
+  .pp-sec h2 { font-size: 1.15rem; font-weight: 700; color: var(--navy); padding-bottom: 10px; margin-bottom: 14px; border-bottom: 1px solid var(--gray-300); }
+  .pp-sec p, .pp-sec li { font-size: 0.95rem; line-height: 1.95; color: var(--gray-700); overflow-wrap: anywhere; }
+  .pp-sec p + p, .pp-sec ul + p, .pp-sec p + ul, .pp-sec .pp-table + ul, .pp-sec p + .pp-table { margin-top: 12px; }
+  .pp-sec ul { padding-left: 1.4em; }
+  .pp-sec ul ul { margin-top: 2px; }
+  .pp-sec li::marker { color: var(--teal); }
+  .pp-sec strong { color: var(--navy); font-weight: 600; }
+  .pp-sec a { color: var(--sky); text-underline-offset: 3px; }
+  .pp-table { margin: 12px 0; overflow-x: auto; }
+  .pp-table table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .pp-table th, .pp-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--gray-300); line-height: 1.8; color: var(--gray-700); }
+  .pp-table th { background: var(--gray-100); color: var(--navy); font-weight: 600; white-space: nowrap; }
+  .pp-table td:first-child { white-space: nowrap; color: var(--navy); font-weight: 500; }
+  .pp-date { margin-top: 48px; text-align: right; font-size: 0.92rem; color: var(--gray-700); }
+  .pp-back { display: inline-block; margin-top: 40px; color: var(--teal); text-decoration: none; font-weight: 500; }
+  @media (max-width: 768px) {
+    .pp-page { padding: 112px 20px 72px; }
+    .pp-toc { padding: 16px 18px; }
+    .pp-toc ol { grid-template-columns: 1fr; }
+    .pp-sec h2 { font-size: 1.05rem; }
+    /* 表は1行ずつのカードに */
+    .pp-table table, .pp-table tbody, .pp-table tr, .pp-table td { display: block; width: 100%; }
+    .pp-table thead { display: none; }
+    .pp-table tr { padding: 12px 0; border-bottom: 1px solid var(--gray-300); }
+    .pp-table td { border: 0; padding: 2px 0; white-space: normal !important; }
+    .pp-table td::before { content: attr(data-label) "："; color: var(--gray-500); font-size: 0.8rem; font-weight: 400; }
+    .pp-table td:first-child::before { content: none; }
+    .pp-table td:first-child { font-size: 0.98rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <img class="msq-logo" data-idx="0" src="/images/logo-wide.png" alt="M Square Co., Ltd." style="height:48px;width:auto;display:block;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#what">私たちの役割</a></li>
+    <li><a href="/#solution">ソリューション</a></li>
+    <li><a href="/#vision">ビジョン</a></li>
+    <li><a href="/news/">ニュース</a></li>
+    <li><a href="/#about">会社概要</a></li>
+    <li><a href="/#recruit">採用情報</a></li>
+    <li><a href="/#intern">インターン</a></li>
+  </ul>
+  <a href="/#contact" class="nav-cta desktop-only">お問い合わせ</a>
+
+  <!-- ハンバーガーボタン（モバイルのみ表示） -->
+  <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- モバイルメニュー -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="/#what" onclick="closeMobileMenu()">私たちの役割</a></li>
+    <li><a href="/#solution" onclick="closeMobileMenu()">ソリューション</a></li>
+    <li><a href="/#vision" onclick="closeMobileMenu()">ビジョン</a></li>
+    <li><a href="/news/" onclick="closeMobileMenu()">ニュース</a></li>
+    <li><a href="/#about" onclick="closeMobileMenu()">会社概要</a></li>
+    <li><a href="/#recruit" onclick="closeMobileMenu()">採用情報</a></li>
+    <li><a href="/#intern" onclick="closeMobileMenu()">インターン</a></li>
+    <li><a href="/#contact" class="mobile-cta" onclick="closeMobileMenu()">お問い合わせ</a></li>
+  </ul>
+</div>
+
+<!-- PRIVACY（原稿：houmu の privacy-policy-v1.md 第1部。直すときは workspace\dev-front\msquare-privacy\build.mjs で作り直す） -->
+<main>
+<section class="pp-page">
+  <div class="container">
+    <span class="section-label">Privacy Policy</span>
+    <h1 class="section-title">プライバシーポリシー</h1>
+    <div class="pp-intro">
+<p>エムスクエア株式会社（以下「当社」といいます。）は、当社のウェブサイト、お問い合わせへの対応、当社が提供する共有サイトおよび開発用のページ（以下「共有サイト等」といいます。）で取り扱う個人情報を、以下の方針に基づき適切に取り扱います。</p>
+    </div>
+    <div class="pp-toc">
+      <ol>
+<li><a href="#p1">1. 取得する情報</a></li>
+<li><a href="#p2">2. 利用目的</a></li>
+<li><a href="#p3">3. 第三者提供</a></li>
+<li><a href="#p4">4. 外部サービスの利用と委託</a></li>
+<li><a href="#p5">5. 外国にある事業者への委託と外的環境の把握</a></li>
+<li><a href="#p6">6. 安全管理措置</a></li>
+<li><a href="#p7">7. 保存期間</a></li>
+<li><a href="#p8">8. Cookie等の利用</a></li>
+<li><a href="#p9">9. 開示等の請求</a></li>
+<li><a href="#p10">10. ポリシーの変更</a></li>
+<li><a href="#p11">11. 事業者の情報とお問い合わせ窓口</a></li>
+      </ol>
+    </div>
+<section class="pp-sec" id="p1">
+<h2>1. 取得する情報</h2>
+<p>当社は、次の情報を取得することがあります。</p>
+<ul>
+<li><strong>お問い合わせフォーム</strong>：お名前、メールアドレス、お問い合わせの種別、お問い合わせの内容（ご応募の場合は、内容に記載された経歴などを含みます）</li>
+<li><strong>共有サイト等へのログイン</strong>：Google アカウントでログインする場合に Google から受け取る、メールアドレス、氏名、プロフィール画像。メールアドレスに届く確認コードでログインする場合は、メールアドレス。</li>
+<li><strong>共有サイト等のご利用</strong>：ご利用者が書き込んだ依頼・コメント、アップロードしたファイル、その日時</li>
+<li><strong>アクセスの記録</strong>：アクセスの日時、IPアドレス、ブラウザや端末に関する情報、閲覧したページ、ログインの成否</li>
+<li>当社とのメールその他のやり取りの内容</li>
+</ul>
+<p>当社は、Google アカウントから、上記のメールアドレス、氏名、プロフィール画像のほかの情報（連絡先、カレンダー、ドライブのファイルなど）を取得しません。</p>
+</section>
+<section class="pp-sec" id="p2">
+<h2>2. 利用目的</h2>
+<p>当社は、取得した情報を次の目的で利用します。</p>
+<ul>
+<li>お問い合わせ、ご相談への対応と、そのためのご連絡</li>
+<li>インターン・アルバイトなどへのご応募に関する選考とご連絡</li>
+<li>共有サイト等へのログインの本人確認、利用できる方とページの管理</li>
+<li>共有サイト等でのご依頼への対応（開発、資料の作成、ご返事など）</li>
+<li>共有サイト等とウェブサイトの運用、改善、障害への対応</li>
+<li>不正なアクセスの防止、セキュリティの確保、法令上必要な対応</li>
+</ul>
+<p>Google アカウントから受け取った情報は、ログインと利用できる方の管理のためにだけ使います。広告に使ったり、第三者に販売したりしません。</p>
+</section>
+<section class="pp-sec" id="p3">
+<h2>3. 第三者提供</h2>
+<p>当社は、次の場合を除き、ご本人の同意なく個人データを第三者へ提供しません。</p>
+<ul>
+<li>法令に基づく場合</li>
+<li>生命・身体・財産の保護に必要な場合</li>
+<li>その他法令で認められる場合</li>
+</ul>
+<p>第4項の委託先への取り扱いの委託は、第三者提供にあたりません。</p>
+</section>
+<section class="pp-sec" id="p4">
+<h2>4. 外部サービスの利用と委託</h2>
+<p>当社は、次の業務のため、外部サービスを利用し、必要な範囲で個人情報の取り扱いを委託します。委託先は、個人情報を適切に取り扱う者を選び、必要かつ適切な監督を行います。</p>
+<div class="pp-table"><table>
+<thead><tr><th scope="col">事業者</th><th scope="col">所在国</th><th scope="col">主な用途</th></tr></thead>
+<tbody>
+<tr><td data-label="事業者">Cloudflare, Inc.</td><td data-label="所在国">米国</td><td data-label="主な用途">ウェブサイトと共有サイト等の配信・運用、ログインの管理（Cloudflare Access）、データの保管、アクセスの記録、共有サイト等への書き込みの件名の作成（AI による処理）</td></tr>
+<tr><td data-label="事業者">Google LLC</td><td data-label="所在国">米国</td><td data-label="主な用途">Google アカウントによるログイン、メールの送受信と保存（Google Workspace）、ウェブフォントの配信</td></tr>
+<tr><td data-label="事業者">Formspree, Inc.</td><td data-label="所在国">米国</td><td data-label="主な用途">お問い合わせフォームの受け付けと、当社へのメールでの転送</td></tr>
+<tr><td data-label="事業者">Anthropic, PBC</td><td data-label="所在国">米国</td><td data-label="主な用途">共有サイト等でのご依頼の内容の読み取り・分析と、ご返事・成果物の作成の補助（AI）</td></tr>
+<tr><td data-label="事業者">GitHub, Inc.</td><td data-label="所在国">米国</td><td data-label="主な用途">共有サイト等でのご依頼に基づいて作成するプログラムの保管</td></tr>
+</tbody></table></div>
+<ul>
+<li>AI の利用について：当社は、ご依頼への対応のため、共有サイト等に書き込まれた内容を AI に読み取らせることがあります。当社は、AI の提供者が、入力された内容を AI の学習に使わない条件（商用の利用規約）で利用します。</li>
+<li>外部サービスにおける情報の取り扱いは、各提供者のプライバシーポリシー等もご確認ください。</li>
+</ul>
+</section>
+<section class="pp-sec" id="p5">
+<h2>5. 外国にある事業者への委託と外的環境の把握</h2>
+<ul>
+<li>当社は、第4項のとおり、米国の事業者に個人情報の取り扱いを委託しています。</li>
+<li>Cloudflare のネットワーク（AI による処理を含みます）では、日本の外の拠点で処理されることがあります。</li>
+<li>当社は、米国の個人情報の保護に関する制度を把握したうえで、安全管理措置を講じています。</li>
+<li>米国の制度の概要は、個人情報保護委員会のウェブサイト（「外国における個人情報の保護に関する制度等の調査」）でご確認いただけます。</li>
+<li>当社は、委託先の利用規約（データ処理に関する規約を含みます）の内容を確認し、個人情報の適切な取り扱いが確保されることを確かめています。</li>
+<li>これらの委託先は、OECD プライバシーガイドラインの8原則に沿った措置を講じています。</li>
+</ul>
+</section>
+<section class="pp-sec" id="p6">
+<h2>6. 安全管理措置</h2>
+<p>当社は、個人情報への不正アクセス、漏えい、滅失または毀損を防止するため、次の措置を講じます。</p>
+<ul>
+<li><strong>組織的安全管理措置</strong>：個人情報の取り扱いの責任者を定めます。取り扱う者と、取り扱う情報の範囲を限定します。</li>
+<li><strong>人的安全管理措置</strong>：従業者に、秘密の保持と適正な取り扱いを周知し、教育します。</li>
+<li><strong>物理的安全管理措置</strong>：個人情報を扱う端末と書類の盗難・紛失を防止します。</li>
+<li><strong>技術的安全管理措置</strong>：次の措置をとります。<ul><li>共有サイト等の利用を、当社が招待した方に限定し、ページごとに利用できる方を管理</li><li>アクセス権限の管理と、アクセスの記録</li><li>通信の暗号化</li><li>パスワード・鍵などの秘密情報の分離した保管</li></ul></li>
+<li><strong>外的環境の把握</strong>：第5項のとおりです。</li>
+</ul>
+</section>
+<section class="pp-sec" id="p7">
+<h2>7. 保存期間</h2>
+<ul>
+<li>お問い合わせ：最後のご連絡から3年間保存します。</li>
+<li>ご応募：選考の終了から1年間保存します（採用となった場合は、雇用の記録として法令の定める期間保存します）。</li>
+<li>共有サイト等のアカウントの情報と書き込み：ご利用の終了から1年間保存します。</li>
+<li>アクセスの記録：1年間保存します。</li>
+<li>期間を過ぎた情報は、適切な方法で削除または匿名化します。法令や紛争への対応のために必要な場合は、必要な期間保存することがあります。</li>
+</ul>
+</section>
+<section class="pp-sec" id="p8">
+<h2>8. Cookie等の利用</h2>
+<ul>
+<li>共有サイト等では、ログインの状態を保つため、Cookie を利用します。Cookie を無効にすると、ログインできません。</li>
+<li>当社のウェブサイトでは、アクセス解析や広告のための Cookie は利用していません。</li>
+</ul>
+</section>
+<section class="pp-sec" id="p9">
+<h2>9. 開示等の請求</h2>
+<ul>
+<li>ご本人から、保有個人データについて、次のご請求があった場合は、ご本人確認のうえ、法令に従って対応します。<ul><li>利用目的の通知、開示、訂正、追加、削除、利用停止、消去</li><li>第三者提供の停止</li><li>第三者提供の記録の開示</li></ul></li>
+<li>共有サイト等のアカウントの削除と、Google アカウントから受け取った情報の削除も、同じ窓口で受け付けます。</li>
+<li>ご請求は、第11項の窓口にメールでご連絡ください。お手続きの方法をご案内します。</li>
+</ul>
+</section>
+<section class="pp-sec" id="p10">
+<h2>10. ポリシーの変更</h2>
+<p>当社は、法令、サービス内容その他の事情に応じて本ポリシーを変更することがあります。重要な変更がある場合は、当サイト上でお知らせします。</p>
+</section>
+<section class="pp-sec" id="p11">
+<h2>11. 事業者の情報とお問い合わせ窓口</h2>
+<ul>
+<li>事業者：エムスクエア株式会社</li>
+<li>代表者：代表取締役社長　三井 純一</li>
+<li>住所：〒980-0845 宮城県仙台市青葉区荒巻字青葉468-1 東北大学マテリアル・イノベーション・センター 青葉山ガレージ</li>
+<li>メール：<a href="mailto:info@msquare-inc.co.jp">info@msquare-inc.co.jp</a></li>
+</ul>
+</section>
+<p class="pp-date">制定日：2026年○月○日</p>
+    <a href="/" class="pp-back">← トップページへ</a>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img class="msq-logo" data-idx="3" src="/images/logo-wide-transparent.png" alt="M Square Co., Ltd." style="height:30px;width:auto;">
+  </div>
+  <div class="footer-links">
+    <a href="/#what">私たちの役割</a>
+    <a href="/#solution">ソリューション</a>
+    <a href="/#vision">ビジョン</a>
+    <a href="/#about">会社概要</a>
+    <a href="/news/">ニュース</a>
+    <a href="/#contact">お問い合わせ</a>
+    <a href="/privacy/">プライバシーポリシー</a>
+  </div>
+  <p class="footer-copy">© 2024 M Square Co., Ltd. All rights reserved.</p>
+</footer>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close menu on outside click
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) closeMobileMenu();
+  });
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+</script>
+</body>
+</html>
