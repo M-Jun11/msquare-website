@@ -30,6 +30,7 @@ jobs:
           done
           if [ -d images ]; then cp -r images _site/; fi
           if [ -d news ]; then cp -r news _site/; fi
+          if [ -d privacy ]; then cp -r privacy _site/; fi
           test -f _site/index.html
           ls -R _site
 
